@@ -4,9 +4,19 @@
 
 :root {
 	/* Colors & branding */
+	--clr-brand-gray: #323230;
+	--clr-brand-red: #dd3700;
+	--clr-brand-white: #eee;
+
 	--clr-text: #eee;
 	--clr-text-faded: #aaa;
 	--size-text: 1.5rem;
+	--clr-link: var(--clr-accent);
+	--clr-link-active: #f65202;
+
+	--transition-curve-default: ease-in-out;
+	--transition-duration-btn: 100ms;
+	--transition-duration-link: 300ms;
 
 	/* Background */
 	--clr-bg1: #1f1f1c;
@@ -50,6 +60,41 @@ body {
 
 h1 {
 	font-size: 3.5em;
+}
+
+/* Links */
+a:focus {
+	outline: none;
+}
+a {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 0.2em;
+	margin-bottom: -0.2em;
+	text-decoration: none;
+	color: var(--clr-link);
+	transition: color var(--transition-duration-link) var(--transition-curve-default);
+}
+a:focus,
+a:hover {
+	color: var(--clr-link-active);
+}
+a::before {
+	content: '';
+	position: absolute;
+	bottom: 0.15em;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background: var(--clr-link-active);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--transition-duration-link) ease-in;
+}
+a:hover::before,
+a:focus::before {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 /*
