@@ -5,6 +5,7 @@
 :root {
 	/* Colors & branding */
 	--clr-text: #eee;
+	--clr-text-faded: #aaa;
 	--size-text: 1.5rem;
 
 	/* Background */
@@ -63,9 +64,32 @@ h1 {
 }
 .list .item {
 	display: grid;
+	grid-template-rows: auto auto;
 	grid-template-columns: 2ch 1fr 4ch 1fr;
 	column-gap: 2em;
 	background: #eee4;
 	border-radius: 0.25em;
 	padding: 0.5em 1em;
+}
+.list .item > * {
+	grid-row: 2;
+}
+.list .item > *::before {
+	grid-row: 1;
+	display: block;
+	font-size: 0.5em;
+	color: var(--clr-text-faded);
+	text-transform: uppercase;
+}
+.list .item .track::before {
+	content: "Track";
+}
+.list .item .title::before {
+	content: "Title";
+}
+.list .item .length::before {
+	content: "Length";
+}
+.list .item .filename::before {
+	content: "File";
 }
