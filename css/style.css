@@ -50,3 +50,22 @@ body {
 h1 {
 	font-size: 3.5em;
 }
+
+/*
+ * List stuff
+ */
+
+.list {
+	display: grid;
+	grid-auto-rows: minmax(min-content, max-content);
+	text-align: left;
+	row-gap: 0.25em;
+}
+.list .item {
+	display: grid;
+	grid-template-columns: 2ch 1fr 4ch 1fr;
+	column-gap: 2em;
+	background: #eee4;
+	border-radius: 0.25em;
+	padding: 0.5em 1em;
+}
