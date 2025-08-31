@@ -1,0 +1,52 @@
+/*
+ * Variables
+ */
+
+:root {
+	/* Colors & branding */
+	--clr-text: #eee;
+	--size-text: 1.5rem;
+
+	/* Background */
+	--clr-bg1: #1f1f1c;
+	--clr-bg2: #171754;
+
+	/* Content */
+	--clr-content-bg: #2221;
+	--border-content: 0.0625rem solid #222;
+	--spacing-content-vertical: 2rem;	
+	--width-content:  1250px;
+}
+
+/*
+ * Global styling
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+/* Body */
+body {
+	background: linear-gradient(to top, var(--clr-bg1), var(--clr-bg2));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-family: "Roboto", sans-serif;
+	font-size: var(--size-text);
+}
+
+#wrapper {
+	color: var(--clr-text);
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.5em;
+}
