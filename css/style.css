@@ -109,8 +109,9 @@ a:focus::before {
 }
 .list .item {
 	display: grid;
-	grid-template-rows: auto auto;
-	grid-template-columns: 2ch 1fr 4ch 1fr;
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 2ch 1fr 4ch;
+	row-gap: 0.25em;
 	column-gap: 2em;
 	background: #eee4;
 	border-radius: 0.25em;
@@ -126,6 +127,10 @@ a:focus::before {
 	color: var(--clr-text-faded);
 	text-transform: uppercase;
 }
+.list .item .file {
+	grid-row: 4;
+	grid-column: 1 / span 3;
+}
 .list .item .track::before {
 	content: "Track";
 }
@@ -135,6 +140,42 @@ a:focus::before {
 .list .item .length::before {
 	content: "Length";
 }
-.list .item .filename::before {
+.list .item .file::before {
 	content: "File";
+	grid-row: 3;
+}
+
+.list audio {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.list .item {
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 2ch 1fr 4ch;
+	}
+	.list .item .track, .list .item .title {
+		grid-row: 1;
+	}
+	.list .item .track::before, .list .item .title::before {
+		grid-row: 2;
+	}
+	.list .item .length, .list .item .file {
+		grid-row: 3;
+	}
+	.list .item .length::before, .list .item .file::before {
+		grid-row: 4;
+	}
+	.list .item .track {
+		grid-column: 1;
+	}
+	.list .item .title {
+		grid-column: 2 / span 2;
+	}
+	.list .item .length {
+		grid-column: 3;
+	}
+	.list .item .file {
+		grid-column: 1 / span 2;
+	}
 }
