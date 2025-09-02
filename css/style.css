@@ -19,8 +19,7 @@
 	--transition-duration-link: 300ms;
 
 	/* Background */
-	--clr-bg1: #1f1f1c;
-	--clr-bg2: #171754;
+	--clr-bg: #161613;
 
 	/* Content */
 	--clr-content-bg: #2221;
@@ -44,7 +43,8 @@ html, body {
 
 /* Body */
 body {
-	background: linear-gradient(to top, var(--clr-bg1), var(--clr-bg2));
+	/*background: linear-gradient(to top, var(--clr-bg1), var(--clr-bg2));*/
+	background: var(--clr-bg) url('../assets/img/hex-bg.svg') repeat center / 168px 96.99px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -105,7 +105,7 @@ a:focus::before {
 	display: grid;
 	grid-auto-rows: minmax(min-content, max-content);
 	text-align: left;
-	row-gap: 0.25em;
+	row-gap: 0.5em;
 }
 .list .item {
 	display: grid;
@@ -113,7 +113,8 @@ a:focus::before {
 	grid-template-columns: 2ch 1fr 4ch;
 	row-gap: 0.25em;
 	column-gap: 2em;
-	background: #eee4;
+	background: #56565288;
+	backdrop-filter: blur(0.15em);
 	border-radius: 0.25em;
 	padding: 0.5em 1em;
 }
